@@ -25,14 +25,16 @@
                                           ?></p>
                         </div>
                         <div class="title-tag__category">
-                          <p class="tag <?php get_category_link($category[0]->term_id); ?>">
-                            <?php
-                            $category = get_the_category();
-                            if ($category[0]) {
-                              echo '<p>' . $category[0]->cat_name . '</p>';
-                            }
-                            ?></p>
-                        </div>
+  <?php
+  $category = get_the_category();
+  if (!empty($category) && isset($category[0])) {
+    $category_link = get_category_link($category[0]->term_id);
+    $category_name = $category[0]->cat_name;
+    echo '<p class="tag"><a href="' . esc_url($category_link) . '">' . esc_html($category_name) . '</a></p>';
+  }
+  ?>
+</div>
+
                       </div>
                       <?php // タイトルを表示させる start 
                       ?>
