@@ -1,0 +1,177 @@
+#guide{
+  //定員
+  .capacity{
+    .illust-back{
+      background-position: 90% 0%, 10% 100%;
+      padding-bottom: 100px;
+      @include sp {
+       padding-bottom: 0;
+      }
+    }
+    .mid-in{
+      margin-bottom: 40px;
+      p{
+        text-align: center;
+        a{
+          color: $color3;
+          text-decoration: underline;
+        }
+      }
+    }
+    .flexitem{
+      @include lg {
+        justify-content: space-between;
+        max-width: 768px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      @include md {
+        justify-content: center;
+        max-width: 541px;
+      }
+      @include sp {
+        max-width: 350px;
+      }
+      li{
+        width: 146px;
+        height: 170px;
+        padding: 0 16px;
+        background-image: url(../images/svg/attempt-back.svg);
+        background-repeat: no-repeat;
+        background-size: contain; 
+        @include flex(center,center,0,0,1);
+        text-align: center;
+        position: relative;
+        margin-bottom: 32px;
+        @include lg {
+         margin: 0 24px 40px;
+        }
+        @include md {
+          margin: 0 16px 40px;
+        }
+        @include sp {
+          width: 122px;
+          height: 144px;
+          margin: 0 8px 40px;
+        }
+        &::after{
+          content: "";
+          @include absoluteCenterX;
+          top: auto;
+          bottom: -20px;
+          max-width: 16px;
+          background-size: contain; 
+          background-repeat: no-repeat;
+          width: 100%;
+          height: 40px;
+          background-image: url(../images/svg/attempt-attached.svg);
+        }
+        p{
+          color: $color7;
+
+        }
+      }
+    }
+  }
+  //園の見学
+  .inspection{
+    .butterfly-back{
+      @include xl {
+        max-width: 100%;
+        padding-bottom: 120px;
+      }
+    }
+    .flexcolumn{
+      align-items: inherit;
+      flex-wrap: wrap;
+      @include lg {
+       justify-content: center;
+      }
+       &__left{
+        @include lg {
+        max-width: 768px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        img{
+          width: 100%;
+        }
+        }
+      }
+      &__right{
+        position: relative;
+        @include lg {
+          max-width: 768px;
+          width: 100%;
+          margin-top: 40px;
+          display: inline-block;
+          .button__switch{
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+  //入園めでの流れ
+  .guide-flow{
+    .flow-box{
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      margin-bottom: 40px;
+      position: relative;
+      padding: 24px;
+      &::after{
+        content: "";
+        position: absolute;
+        bottom: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 40px solid #fff;
+        border-right: 40px solid transparent;
+        border-left: 40px solid transparent;
+      }
+      .flex-left{
+        width: 100%;
+        align-items: center;
+        .flex-left{
+          @include md {
+           flex-wrap: wrap;
+          }
+        }
+        .step{
+          width: 10%;
+          font-size: 48px;
+          color: $color5;
+          margin-right: 40px;
+          // font-family: "UzumasaHonmarugothic";
+          @include md {
+            font-size: 32px;
+          }
+        }
+        .flow-s{
+          width: 20%;
+          font-size: 24px;
+          color: $color2;
+          font-weight: bold;
+          margin-right: 40px;
+          @include md {
+            width: 100%;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  //提出書類
+  .guide-document{
+    .ladybug-back{
+      @include xl {
+        max-width: 100%;
+        padding-bottom: 120px;
+      }
+    }
+  }
+}

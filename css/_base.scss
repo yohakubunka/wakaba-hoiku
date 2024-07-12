@@ -1,0 +1,535 @@
+/*-------------　基本設定　--------------*/ 
+html {
+  font-size: 10px !important;
+}
+body {
+  background-color: $color6;
+  position: relative;
+  font-size: 1.8rem;
+  @extend .text;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  color: $color1;
+}
+img{
+  max-width: 100%;
+}
+/*-------------　フォント　-------------*/ 
+@font-face {
+  font-family: 'UzumasaHonmarugothic';
+  src: url('fonts/uzumaki/UzumasaHonmarugothic.eot'); /* IE9以上用 */
+  src: url('fonts/uzumaki/UzumasaHonmarugothic.eot?#iefix') format('embedded-opentype'),
+  /* モダンブラウザ用 */ url('fonts/uzumaki/UzumasaHonmarugothic.ttf') format('truetype'),
+  /* iOS, Android用 */ url('fonts/uzumaki/UzumasaHonmarugothic.otf') format('opentype'),
+  /* IE8以前用 */ url('fonts/uzumaki/UzumasaHonmarugothic.woff') format('woff'),
+    /* IE8以前用 */ url('fonts/uzumaki/UzumasaHonmarugothic.woff2') format('woff2'),
+    /* iOS, Android用 */ url('fonts/uzumaki/UzumasaHonmarugothic.svg#UzumasaHonmarugothic') format("svg");
+}
+h3 {
+  font-size: 2.4rem;
+  @extend .subtitle;
+  color: $color1;
+  @include md {
+		font-size: 1.8rem;
+	}
+}
+a,ul,li,span,p {
+  font-size: 1.8rem;
+  @extend .text;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  color: $color1;
+  @include md {
+		font-size: 1.4rem;
+	}
+}
+.title span {
+  color: $color3;
+}
+.title {
+  @extend .sectiontitle;
+  color: $color2;
+  font-size: 4.8rem;
+  padding-bottom: 64px;
+  @include flex(center, center);
+  @include md {
+		font-size: 3.2rem;
+    padding-bottom: 40px;
+	}
+  &::before,
+  &::after {
+    content: "";
+    width: calc(72px + 24px);
+    height: 8px;
+    background-image: url(..//images/front/dot.png);
+    background-repeat: no-repeat;
+    @include md {
+      width: 16px;
+      background-image: url(..//images/front/dot-single.png);
+    }
+  }
+  &::before {
+    padding-right: 24px;
+    @include md {
+      padding-right: 16px;
+    }
+  }
+  &::after {
+    padding-left: 24px;
+    background-position: right;
+    @include md {
+      padding-left: 16px;
+    }
+  }
+  span{
+    font-size: 4.8rem;
+    @include md {
+      font-size: 3.2rem;
+    }
+  }
+}
+.box{
+  margin-top: 40px;
+}
+.subtitle{
+  text-align: center;
+}
+.bold-text{
+  @extend .subtitle;
+}
+br.pc-only{
+  @include md {
+    display: none;
+  }
+}
+br.sp-only{
+  display: none;
+  @include md {
+    display: block;
+  }
+}
+/*------------- 背景 ---------------*/ 
+section{
+  padding-top: 120px;
+  @include md {
+    padding-top: 80px;
+  }
+}
+.last-section{
+  padding-bottom: 120px;
+  @include md {
+    padding-bottom: 80px;
+  }
+}
+.inner {
+  width: 100%;
+  padding: 0 24px 0 24px;
+  max-width: 1048px;
+  margin: 0 auto; 
+  @include md {
+    padding: 0 16px 0 16px;
+  }
+}
+.breadcrumb-list{
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  height: 18px;
+  padding: 0 24px 0 24px;
+  max-width: 1048px;
+  margin: 0 auto; 
+  padding-top: 24px;
+  @include md {
+    padding: 0 16px 0 16px;
+    padding-top: 24px;
+  }
+  li{
+    margin-right: 16px;
+    font-size: 12px;
+    img{
+      padding-left: 16px;
+      vertical-align: -5px; /*上下位置を調整*/
+    }
+  }
+  span{
+    line-height: 18px;
+    font-size: 12px;
+  }
+}
+.top-policy {
+  padding: 120px 0 0 0;
+}
+//旗の左背景
+.flagback_left {
+  background-image: url(../images/front/flag_back.png);
+  background-repeat: no-repeat;
+  background-size: 920px, cover;
+  background-position: top left;
+  margin-top: 120px;
+  padding-top: 160px;
+}
+//旗の右背景
+.flagback_right{
+  background-image: url(../images/front/flag_back.png);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 920px, cover;
+  background-position: top right;
+  margin-top: 120px;
+  padding-top: 160px;
+}
+.cloud-back{
+  width: 100%;
+  background-image: url(../images/front/kumo_back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  @include md {
+    background: none;
+    }
+}
+//ドット背景
+.dot-back{
+  max-width: 1176px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/svg/dot-back.svg),url(../images/svg/dot-back.svg);
+  background-position: top 56px right,bottom left;
+  background-repeat: no-repeat;
+  @include md {
+    background: none;
+  }
+}
+//山の背景
+.grass-back{
+  max-width: 1362px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/svg/grass-right.svg),url(../images/svg/grass-left.svg);
+  background-position: 100% calc(50% - 84px), 0 calc(100% - 64px);
+  background-repeat: no-repeat;
+  @include lg {
+  background: none;
+  }
+}
+//鳥・てんとう虫の背景
+.illust-back{
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/svg/bird.svg),url(../images/svg/ladybug.svg);
+  background-position: 95% 0, 5% 100%;
+  background-repeat: no-repeat;
+  @include lg {
+    background-position: 90% 68%, 10% 85%;
+  }
+  @include sp {
+    background: none;
+  }
+}
+//鳥のみ　背景
+.bird-back{
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/svg/bird.svg);
+  background-position: calc(100% - 16px) 100%;
+  background-repeat: no-repeat;
+}
+//蝶のみ　背景
+.butterfly-back{
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/svg/butterfly.svg);
+  background-position: calc(100% - 16px) 100%;
+  background-repeat: no-repeat;
+}
+//テントウムシのみ　背景
+.ladybug-back{
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/svg/ladybug.svg);
+  background-position:  16px 100%;
+  background-repeat: no-repeat;
+}
+
+//ドット背景繰り返し
+.dot-back-repeat{
+  max-width: 1147px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/svg/dot-back-repeat.svg);
+  background-position: center -238px;
+  background-repeat: repeat-y;
+  @include lg {
+    background: none;
+  }
+}
+/*----------- レイアウト.整列 ------------*/ 
+// flexの中央寄せ
+.flex-center{
+  @include flex(center,center);
+}
+// flexの左寄せ
+.flex-left{
+  @include flex(start,start);
+}
+// flexの右寄せ
+.flex-right{
+  @include flex(end,end);
+}
+//flexの2列
+.flexcolumn {
+  @include flex(between, center);
+  &.reverse{
+    flex-direction: row-reverse;
+  }
+  &__left {
+    max-width: calc(50% - 24px);
+    width: 100%;
+  }
+  &__right {
+    max-width: calc(50% - 24px);
+    width: 100%;
+  }
+}
+.flexitem{
+  @include flex(between,center,wrap);
+}
+//flexの3列
+.flexthree{
+  @include flex(center,center,wrap);
+  max-width: 810px;
+  width: 100%;
+  margin: 0 auto;
+}
+/*------------- 共通パーツ -------------*/ 
+//ボタン
+.button {
+  padding-top: 40px;
+  width: 100%;
+  &__switch {
+    width: 288px;
+    height: 64px;
+    border-radius: 100px;
+    font-size: 1.8rem;
+    transition: 0.3s;
+    @include flex(center,center);
+    border: 2px solid $color3;
+    color: $color3;
+    background-color: $color7;
+    @include md {
+      width: 224px;
+      height: 40px;
+      font-size: 1.4rem;
+    }
+    &:hover{
+      background-color: $color3;
+      color: #fff;
+    }
+  }
+ 
+}
+//窓枠
+.window-frame{
+  max-width: calc(100% - 48px);
+  width: 100%;
+  height: 565px;
+  background-color: $color7;
+  border-radius: 214px 214px 0 0;
+  padding: 14px;
+  object-fit: cover;
+  @include lg {
+    max-width: 100%;
+    width: 400px;
+  }
+  @include md {
+    max-width: 100%;
+    width: 480px;
+  }
+  @include sp {
+    width: 375px;
+    height: 450px;
+  }
+}
+//取り組み
+.attempt{
+  li{
+    max-width: 243px;
+    width: 100%;
+    height: 280px;
+    padding: 0 16px;
+    background-image: url(../images/svg/attempt-back.svg);
+    background-repeat: no-repeat;
+    background-size: contain; 
+    @include flex(center,center,0,0,1);
+    text-align: center;
+    position: relative;
+    margin-bottom: 32px;
+    &:nth-child(2){
+      margin: 0 40px 32px 40px;
+    }
+    @include lg {
+      margin: 0 50px 64px;
+      &:nth-child(2){
+        margin: 0 50px 64px;
+      }
+    }
+    @include md {
+      height: 230px;
+      max-width: 198px;
+      width: 100%;
+      background-position: center;
+      margin: 0 30px 64px;
+      &:nth-child(2){
+        margin: 0 30px 64px;
+      }
+    }
+    &::after{
+      content: "";
+      @include absoluteCenterX;
+      top: auto;
+      bottom: -32px;
+      max-width: 24px;
+      width: 100%;
+      height: 64px;
+      background-image: url(../images/svg/attempt-attached.svg);
+    }
+    p{
+      color: $color7;
+      @include md {
+        width: 100%;
+        max-width: 108px;
+      }
+    }
+  }
+}
+/*-----------------------------------*/ 
+// 2022.11.09 古田追加
+.white-back{
+  background-color: #fff;
+}
+//リスト(li)先頭に花のイラスト
+.flowered{
+  &::before{
+    content: url(../images/svg/flower.svg);
+    display: inline-block;
+    margin-right: 16px;  /*画像とテキスト間の余白を調整*/
+    vertical-align: -2px; /*上下位置を調整*/
+  }
+}
+//テキスト両端に花のイラストを追加
+.p-flowered{
+  text-align: center;
+  position: relative;
+  &:before,
+  &:after{
+    content: url(../images/svg/flower.svg);
+    display: inline-block;
+    vertical-align: -2px; /*上下位置を調整*/
+    @include md {
+      width: 10px;
+    }
+  }
+  &:before {
+    margin-right: 16px;
+  }
+  &:after {
+    margin-left: 16px;
+  }
+}
+
+//画像に対し8pxの枠を付ける
+.img-frame-8{
+  border: 8px solid #fff;
+  object-fit: cover;
+}
+//画像に対し16pxの枠を付ける
+.img-frame-16{
+  border: 16px solid #fff;
+  object-fit: cover;
+}
+.wrap-2{
+ width: calc((100% - 24px)/2);
+ @include md {
+  width: 100%;
+  }
+}
+  .point{
+    background-color: #ffffff;
+    padding: 158px 40px 0;
+    height: 318px;
+    margin-top: 168px;
+    position: relative;
+    @include md {
+      padding: 139px 40px 40px;
+      margin-left: 40px;
+      margin-right: 40px;
+      height: auto;
+    }
+    @include sp {
+      padding-top: 112px;
+      margin-left: 0px;
+      margin-right: 0px;
+     }
+    p{
+      text-align: center;
+      font-size: 24px;
+      color: $color2;
+      margin-bottom: 16px;
+      @include md {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+    }
+    img {
+      margin: 0 auto;
+    }
+    .circle{
+      border-radius: 50%;
+      object-fit: cover;
+      width: 268px;
+      height: 268px;
+      border: 16px solid #fff;
+      position: absolute;
+      top: -130px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      @include sp {
+        width: 224px;
+        height: 224px;
+       }
+    }
+  }
+  .accordion-item{
+    cursor: pointer;
+  }
+//資料ダウンロード　装飾
+  .document-link{
+    padding:  24px 0;
+    background: url(../images/svg/news-dot.svg) repeat-x;
+    background-position: bottom;
+    padding-bottom: 24px;
+    transition: 0.3s;
+    &::after{
+      content: url(../images/svg/link-icon.svg);
+      display: inline-block;
+      margin-left: 16px;  /*画像とテキスト間の余白を調整*/
+      vertical-align: -1px; /*上下位置を調整*/
+      @include md {
+        vertical-align: -5px;
+      }
+    }
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+  //アコーディオン　開いたら閉じた状態
+  .accordion-box,.accordion-container{
+    .accordion-content{
+      display: none;
+    }
+  }

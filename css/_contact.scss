@@ -1,0 +1,77 @@
+#contact {
+  .caution{
+    margin-bottom: 40px;
+  }
+  .contact-form{
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    dt{
+      padding-bottom: 16px;
+      @include md {
+       font-size: 1.6rem;
+       }
+    }
+    dd{
+      padding-bottom: 8px;
+      ::placeholder {
+        color: #A06B0F;
+        opacity: 0.5;
+      }
+      @include md {
+        font-size: 1.6rem;
+        }
+    }
+    ol{
+      .form{
+        margin-bottom: 40px;
+       
+        dl{
+          background: url(../images/svg/news-dot.svg) repeat-x;
+          background-position: bottom;
+          margin-bottom: 24px;
+        
+        }
+      }
+      .privacy-policy{
+        height: 180px;
+        overflow-y: scroll;
+        margin-bottom: 24px;
+        &::-webkit-scrollbar{
+          width: 4px;
+       }
+       &::-webkit-scrollbar-track{
+          background-color: #E2EFCC;
+       }
+       &::-webkit-scrollbar-thumb{
+          background-color: $color4;
+       }
+        p {
+          margin-bottom: 16px;         
+        }
+        dl{
+          margin-bottom: 16px;
+        }
+      }
+     
+      span.wpcf7-form-control{
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .accept {
+        text-align: center;
+        .button__switch{
+          margin: 40px auto 0 auto;
+        }
+      }
+    }
+  }
+  //テキストエリア横幅指定
+  .wpcf7 input[type=”text”],
+  .wpcf7 input[type=”email”],
+  .wpcf7 input[type=”textarea”],
+  .wpcf7 input[type=”tel”],
+  .wpcf7 textarea {
+  width: 100%!important
+  }
+}

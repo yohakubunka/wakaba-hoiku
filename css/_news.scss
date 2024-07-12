@@ -1,0 +1,205 @@
+//ニュース一覧
+#news,#category,#date{
+  .flex-left{
+    @include md {
+      flex-wrap: wrap;
+    }
+  }
+  h3 {
+    text-align: left;
+  }
+  .news-col {
+    width: 70%;
+    margin-right: 24px;
+    padding-top: 120px;
+    @include md {
+      width: 100%;
+      margin-right: 0px;
+    }
+    .news-contents{
+      margin-bottom: 40px;
+    }
+    }
+  article.blog-list__list-item { /* アコーディオン*/
+    .accordion {
+      width: 100%;
+      padding: 32px 0;
+      background: url(../images/svg/news-dot.svg) repeat-x;
+      background-position: bottom;
+      .accordion-item + .accordion-item {
+        margin-top: 32px;
+      }
+      .accordion-item {
+        .title-tag {
+          margin-bottom: 24px;
+          align-items: center;
+          &__date {
+            & > p {
+              color: $color3;
+            }
+          }
+          &__category {/* カテゴリータグ装飾 */
+            color: $color7;
+            border-radius: 20px;
+            background-color: $color4;
+            width: 160px;
+            height: 40px;
+            margin-left: 40px;
+            @include md {
+              width: 136px;
+            height: 32px;
+            }
+            & > p {
+              line-height:40px;
+              text-align:center;
+              color: $color7;
+              @include md {
+                line-height:30px;
+                }
+              }
+            }
+        }
+        .title-field {
+          :after{
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-size: 24px;
+            background:url(../images/svg/arrow.svg) no-repeat right top;
+            position:absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            transition: 0.2s;
+          }
+          &__title{
+            width: 100%;
+            position: relative;
+            padding-right: 30px;
+            }
+          }
+        }
+        
+      }
+      .accordion-content { /* アコーディオン内コンテンツ*/
+        display: none;
+        &__read {
+          padding: 16px 0;
+          p{
+            font-size: 1.8rem; 
+            @include sp {
+              font-size: 1.6rem;
+             }
+          }
+        }
+      }
+      .accordion-item.open { //アコーディオン　矢印アイコン　回転
+        .title-field {
+          .title-field__title:after{
+            transform: translateY(-50%) rotate(180deg);
+            transition: 0.2s;
+          }
+        }
+      }
+  }
+  }
+#sidebar { /* サイドバーコンテンツ*/
+  width: 30%;
+  @include md {
+    width: 100%;
+  }
+  .title-field {
+    :after{
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background:url(../images/svg/arrow.svg) no-repeat right top;
+        position:absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        transition: 0.2s;
+      }
+      &__title{
+        width: 100%;
+        position: relative;
+        font-size: 2.4rem;
+        padding-right: 30px;
+        padding-bottom: 8px;
+        color: $color8;
+        font-size: 18px;
+        font-weight: medium;
+        }
+        @include sp {
+          font-size: 1.8rem;
+         }
+      }
+      
+      .accordion-item.open { //アコーディオン　矢印アイコン　回転
+        .title-field {
+          .title-field__title:after{
+            transform: translateY(-50%) rotate(180deg);
+            transition: 0.2s;
+          }
+        }
+      }
+     .sidebar-wrap{
+        width: 100%;
+        padding-bottom: 93px;
+        background: url(../images/svg/bird.svg) no-repeat;
+        background-position: bottom;
+        @include md {
+          background: none;
+        }
+        h2 {
+          font-size: 2.4rem;
+          color: $color2;
+          margin-bottom: 24px;
+        }
+        .all {
+          margin-bottom: 40px;
+        }
+        .mon{
+          background: url(../images/svg/news-dot.svg) repeat-x;
+          background-position: bottom;
+        } 
+        .cat li{
+          margin-bottom: 24px;
+        }
+        .cat-item {
+            width: 100%;
+            height: 40px;
+            font-size: 1.8rem;
+            border-radius: 20px;
+            border: 1px solid $color5;
+            text-align: center;
+            transition: 0.3s;
+            @include md {
+              width: calc((100% - 16px) / 2);
+            }
+            a{
+              line-height: 40px;
+            }
+            &:hover{
+              a{
+                color: $color7;
+              }
+              background-color: $color5;
+            }
+          }
+     }
+  }
+  .pagination{
+    .page-numbers{
+      display: flex;
+      li{
+        margin-right: 16px;
+        a{
+          color: $color5;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,177 @@
+#front{
+  //お知らせ
+  .top-news{
+    .inner{
+      .newslist{
+        max-width: 100%;
+        width: 100%;
+        @include flex(between,center,wrap);
+        &__article{
+          max-width: calc(50% - 24px);
+          width: 100%;
+          padding: 24px; 
+          background-color: $color7;
+          margin-bottom: 40px;
+          @include sm{
+            max-width: 100%;
+            margin-bottom: 16px;
+          }
+          &:last-child{
+            @include sm{
+              margin-bottom: 24px;
+            }
+          }
+          &--data{
+            @include flex(start,center);
+            padding-bottom: 16px;
+            .data{
+              color: $color3;
+            }
+            .category{
+              padding-left: 24px;
+              a{
+                color: $color4;
+              }
+            }
+          }
+          &--title{
+            @include flex(start,start,0,0,1);
+            p{
+              @include second-truncate($lines: 2);
+            }
+            .news-link{
+              max-width: 100%;
+              width: 100%;
+              @include flex(end,end);
+            }
+          }
+        }
+      }
+      .button{
+        padding: 0;
+      }
+    }
+  }
+  //園の取り組み
+  .top-project{
+    .illust-back{
+      background-position: 100% 50%, 0 80%;
+      @include lg {
+        background-position: 90% 63%, 10% 85%;
+      }
+    }
+  }
+  //私たちの想い
+  .top-policy{
+    .flexcolumn {
+      @include md { 
+        flex-wrap: wrap-reverse;
+      }
+      &__left{
+        @include md { 
+          max-width: 100%;
+          text-align: center;
+          img.window-frame{
+            max-width: 100%;
+          }
+        }
+      }
+      &__right{
+        h3,p{
+          text-align: left;
+        }
+        h3{
+          margin-bottom: 24px;
+        }
+        @include md { 
+          max-width: 100%;
+          margin-bottom: 24px;
+          .flex-right{
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+  //もくじ
+  .top-index{
+    .indexpic{
+      margin-top: 40px;
+      max-width: calc((100% - 48px) / 3);
+      width: 100%;
+      @include lg{
+        max-width: calc((100% - 32px) / 2);
+      }
+      @include sp{
+        max-width: 100%;
+      }
+      &__inner{
+        background-color: $color7;
+        padding: 40px 16px 24px 16px;
+        margin-top: 40px;
+        position: relative;
+        &--icon{
+          width: 112px;
+          height: 112px;
+          background-color: $color7;
+          border-radius: 100%;
+          @include flex(center,center);
+          @include absoluteCenterX;
+          top: -56px;
+        }
+        &--image{
+          width: 100%;
+          position: relative;
+          img{
+            width: 100%;
+          }
+        }
+        &--text{
+          padding-top: 24px;
+          width: 100%;
+          color: $color2;
+          @include flex(end,center);
+          &.red-text{
+            color: $color3;
+          }
+          img{
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+  }
+  .top-recruit {
+    .flexcolumn {
+      @include md { 
+        flex-wrap: wrap;
+      }
+      &__left{
+        @include md { 
+          max-width: 100%;
+          text-align: center;
+          margin-bottom: 24px;
+          img.window-frame{
+            max-width: 100%;
+          }
+        }
+      }
+      &__right{
+        h3{
+          text-align: left;
+          margin-bottom: 24px;
+          @include md { 
+            text-align: center;
+          }
+        }
+        @include md { 
+          max-width: 100%;
+          text-align: center;
+          .flex-right{
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

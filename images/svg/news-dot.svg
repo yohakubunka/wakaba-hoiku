@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="4" viewBox="0 0 20 4">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_2140" data-name="長方形 2140" width="20" height="4" transform="translate(298 1556)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="グループ_5853" data-name="グループ 5853" transform="translate(-298 -1556)">
+    <g id="マスクグループ_17" data-name="マスクグループ 17" clip-path="url(#clip-path)">
+      <g id="グループ_5852" data-name="グループ 5852" transform="translate(0 -9)">
+        <circle id="楕円形_6486" data-name="楕円形 6486" cx="2" cy="2" r="2" transform="translate(298 1565)" fill="#9fcb56"/>
+      </g>
+    </g>
+  </g>
+</svg>

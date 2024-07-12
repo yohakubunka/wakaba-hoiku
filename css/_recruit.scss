@@ -1,0 +1,141 @@
+#recruit{
+  //メッセージ
+  .recruit-message{
+    .butterfly-back{
+      @include lg {
+        padding-bottom: 112px;
+        background-position: 95% 100%, 0 0;
+      }
+    }
+    .flexcolumn{
+      flex-wrap: wrap;
+      &__left{
+        @include lg {
+          max-width: 100%;
+          margin-bottom: 56px;
+        }
+        h3{
+          text-align: left;
+          margin-bottom: 24px;
+        }
+         p{
+          text-align: left;
+         }
+      }
+      &__right{
+        @include lg {
+          max-width: 100%;
+          text-align: center;
+        img {
+          width: 100%;
+        }
+        }
+      }
+    }
+  }
+  //先輩の声
+  .senior-voice{
+    .illust-back{
+      background-position: 95% 5%, 5% 95%;
+      @include lg {
+       background: none;
+      }
+    }
+    .flexcolumn{
+      margin-bottom: 40px;
+      @include md {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 56px;
+      }
+      &:nth-child(odd) {
+        //左右交互に表示させる
+        flex-direction: row-reverse;
+      }
+      &__left{
+        @include md {
+          max-width: 100%;
+          margin-bottom: 56px;
+        }
+        @include md {
+          margin-bottom: 16px;
+        }
+        h3,p{
+          text-align: left;
+        }
+        .flex-left{
+          margin-bottom: 8px;
+          align-items: baseline;
+        }
+        .voice-title{
+          margin-bottom: 24px;
+        }
+        .teacher{
+          font-size: 1.8rem;
+          margin-left: 16px;
+          vertical-align: bottom;
+        }
+      }
+      &__right{
+        text-align: center;
+        @include md {
+          max-width: 100%;
+        }
+      }
+     }
+  }
+  //募集要項
+  .recruit-guide{
+    .accordion-box{
+     padding: 40px;
+     background: #fff;
+     margin-bottom: 24px;
+     @include md {
+      padding: 24px;
+      }
+     .accordion-item {
+      position: relative;
+      :after{
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background:url(../images/svg/arrow.svg) no-repeat right top;
+        position:absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        transition: 0.2s;
+      }
+      h3{
+        text-align: left;
+      }
+     }
+     .accordion-item.open { //アコーディオン　矢印アイコン　回転
+        :after{
+          transform: translateY(-50%) rotate(180deg);
+          transition: 0.2s;
+        }
+    }
+      .flex-left{
+        background: url(../images/svg/red-dots.svg) repeat-x;
+        background-position: bottom;
+        padding-bottom: 24px;
+        margin-top: 24px;
+        @include md {
+          flex-wrap: wrap;
+        }
+      }
+      .title-n{
+        width: 20%;
+        text-align: left;
+        font-weight: bold;
+        color: #67be91;
+        margin-right: 16px;
+        @include md {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

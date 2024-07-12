@@ -1,0 +1,37 @@
+//色設定
+$color1: #a06b0f;
+$color2: #67be91;
+$color3: #ff5252;
+$color4: #9fcb56;
+$color5: #ffac99;
+$color6: #fcfcec;
+$color7: #ffffff;
+$color8: #B18842;
+//break point
+$break-point_xl: 1200px;
+$break-point_lg: 1024px;
+$break-point-md: 768px;
+$break-point-sp: 540px;
+$break-point-xs: 375px;
+
+// @include xl { (1200px) } PCの最小
+// @include lg { (1024px) } タブレット横
+// @include md { (768px) }　タブレット縦
+// @include sm { (767px) }　タブレット-スマホ
+// @include sp { (540px) }　スマホ-iPhoneX
+// @include xs { (375px) }　スマホ-iPhone5/6
+.sectiontitle {
+  font-family: 'UzumasaHonmarugothic',m-plus-rounded-1c, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.subtitle {
+  font-family: m-plus-rounded-1c, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.text {
+  font-family: m-plus-rounded-1c, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
