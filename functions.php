@@ -377,3 +377,17 @@ function user_remove_menus()
   }
 }
 add_action('admin_menu', 'user_remove_menus', 999);
+
+/*--セキュリティ対策の処理--*/
+
+// ?author= によるユーザー名露出を防止（トップページへ404転送）
+add_action('template_redirect', function() {
+    if (is_author()) {
+        global $wp_query;
+        $wp_query->set_404();
+        status_header(404);
+        nocache_headers();
+    }
+});
+
+/*--ここまで--*/
