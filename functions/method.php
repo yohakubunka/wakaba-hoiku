@@ -2,37 +2,47 @@
 // ページスラッグ取得 ================================================
 function get_page_slug()
 {
-  global $post;
-  $slug = $post->post_name;
-  if (is_home() || is_front_page()) {
-    $slug = "index";
-  }
-  if (is_date()) {
-    $slug = "date";
-  }
-  if (is_archive()) {
-    $slug = "archive";
-  }
-  if (is_404()) {
-    $slug = "404";
-  }
-  if (is_category()) {
-    $slug = "category";
-  }
-  if (is_tax()) {
-    $slug = "taxonomy";
-  }
-  if (is_tag()) {
-    $slug = "tag";
-  }
-  if (is_single()) {
-    $slug = "single";
-  }
-  if (is_admin()) {
-    $slug = "admin";
-  }
+    global $post;
 
-  return $slug;
+    // 1. 固定名で返す画面を先に判定（$post が null でも安全に即時リターン）
+    if (is_404()) {
+        return "404";
+    }
+    if (is_home() || is_front_page()) {
+        return "index";
+    }
+    if (is_admin()) {
+        return "admin";
+    }
+    if (is_search()) {
+        return "search";
+    }
+    if (is_date()) {
+        return "date";
+    }
+    if (is_category()) {
+        return "category";
+    }
+    if (is_tag()) {
+        return "tag";
+    }
+    if (is_tax()) {
+        return "taxonomy";
+    }
+    if (is_archive()) {
+        return "archive";
+    }
+
+    // 2. 個別記事・固定ページの判定（$post がオブジェクトとして存在する場合のみスラッグを取得）
+    if (is_object($post) && isset($post->post_name)) {
+        if (is_single()) {
+            return "single";
+        }
+        return $post->post_name; // 固定ページ（page）の場合はページスラッグを返す
+    }
+
+    // 3. 上記のいずれにも該当しない場合の初期値（フォールバック）
+    return "default";
 }
 
 // 和暦取得 ================================================

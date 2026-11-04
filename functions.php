@@ -380,7 +380,23 @@ add_action('admin_menu', 'user_remove_menus', 999);
 
 /*--セキュリティ対策の処理--*/
 
-// ?author= によるユーザー名露出を防止（トップページへ404転送）
+// ?author= によるアクセスを、リダイレクト（URL書き換え）が発生する前に404で遮断
+add_action('init', function() {
+    // クエリパラメータに author が含まれているかチェック
+    if (isset($_GET['author']) || (isset($_REQUEST['author']) && !empty($_REQUEST['author']))) {
+        // 管理画面・WP-CLIからのアクセスは除外
+        if (!is_admin() && !defined('WP_CLI')) {
+            global $wp_query;
+            status_header(404);
+            nocache_headers();
+            // 404テンプレートを直接読み込んで処理を即座に終了
+            include(get_query_template('404'));
+            exit;
+        }
+    }
+});
+
+// 万が一 /author/ユーザー名/ というURLを直接叩かれた場合も404にする
 add_action('template_redirect', function() {
     if (is_author()) {
         global $wp_query;

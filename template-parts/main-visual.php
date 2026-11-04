@@ -13,6 +13,8 @@
         <p class="under-title">採用情報</p>
       <?php elseif (is_page('contact')) : ?>
         <p class="under-title">お問い合わせ</p>
+      <?php elseif (is_404()) : ?>
+        <p class="under-title">お探しのページが見つかりません</p>
       <?php elseif (is_archive() || is_category() || is_date() || is_single()) : ?>
         <p class="under-title">お知らせ</p>
       <?php endif; ?>
@@ -28,7 +30,7 @@
         <img class="under-visual" src="<?php echo esc_html(get_theme_mod('life-visual')) ?>" alt="「園の生活」メインビジュアル">
       <?php elseif (is_page('recruit')) : ?>
         <img class="under-visual" src="<?php echo esc_html(get_theme_mod('recruit-visual')) ?>" alt="「求人情報」メインビジュアル">
-      <?php elseif (is_page('contact')) : ?>
+      <?php elseif (is_page('contact')||is_404()) : ?>
         <img class="under-visual" src="<?php echo esc_html(get_theme_mod('contact-visual')) ?>" alt="「お問い合わせ」メインビジュアル">
       <?php elseif (is_archive() || is_category() || is_date() || is_single()) : ?>
         <img class="under-visual" class="under-visual" src="<?php echo esc_html(get_theme_mod('news-visual')) ?>" alt="「お知らせ」メインビジュアル">
